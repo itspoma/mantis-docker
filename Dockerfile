@@ -24,7 +24,7 @@ RUN rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm \
 RUN echo "" >> /etc/php.ini \
  && sed 's/;date.timezone.*/date.timezone = Europe\/Kiev/' -i /etc/php.ini \
  && sed 's/^display_errors.*/display_errors = On/' -i /etc/php.ini \
- && sed 's/^display_startup_errors.*/display_startup_errors = On/' -i /etc/php.ini
+ && sed 's/^display_startup_errors.*/display_startup_errors = On/' -i /etc/php.ini \
  && sed 's/^upload_max_filesize.*/upload_max_filesize = 8M/' -i /etc/php.ini
 
 ENV MYSQL_USER root
