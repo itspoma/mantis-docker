@@ -35,6 +35,11 @@ RUN yum install -y mysql mysql-server \
  && /usr/bin/mysqladmin -u ${MYSQL_USER} password 'root' \
  && mysql -u ${MYSQL_USER} -proot -e "SHOW DATABASES;"
 
+# mysql configure
+RUN true \
+ # && sed 's/^datadir.*/datadir=\/shared\/environment\/mysql\/data/' -i /etc/my.cnf \
+ && sed 's/^log-error.*/log-error=\/shared\/logs\/mysqld.log/' -i /etc/my.cnf
+
 # mantis env vars
 ENV MANTIS_URL http://jaist.dl.sourceforge.net/project/mantisbt/mantis-stable/${MANTIS_VERSION}/mantisbt-${MANTIS_VERSION}.tar.gz
 ENV MANTIS_FILE mantisbt.tar.gz
