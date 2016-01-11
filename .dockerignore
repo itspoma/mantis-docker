@@ -1,0 +1,3 @@
+environment/*/data
+logs/*.log
+site

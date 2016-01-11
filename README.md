@@ -9,7 +9,7 @@ $ make
 MySQL credentials:
 ```
 login: root
-password: root
+password: toortoor
 ```
 
 MantisBT credentials:

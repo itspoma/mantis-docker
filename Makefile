@@ -20,7 +20,11 @@ stop:
 	docker rm -f ${CONTAINER_NAME} 2>/dev/null || true
 
 run: stop
-	docker run --name=${CONTAINER_NAME} -p 80:8080 -v $$PWD:${HOME} -ti -d ${IMAGE_NAME}
+	docker run --name=${CONTAINER_NAME} \
+		-p 80:8080 \
+		-v $$PWD:${HOME} \
+		-ti -d \
+		${IMAGE_NAME}
 
 ssh:
 	docker exec -ti ${CONTAINER_NAME} bash
