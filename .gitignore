@@ -1,4 +1,5 @@
 !.keep
 
+environment/mysql/data
 logs/*.log
 site/*
