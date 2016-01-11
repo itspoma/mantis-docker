@@ -2,6 +2,7 @@ IMAGE_NAME = mantis/image
 CONTAINER_NAME = mantis
 
 HOME = /shared
+PORT = 8080
 
 .PHONY: all
 
@@ -21,7 +22,7 @@ stop:
 
 run: stop
 	docker run --name=${CONTAINER_NAME} \
-		-p 80:8080 \
+		-p ${PORT}:8080 \
 		-v $$PWD:${HOME} \
 		-ti -d \
 		${IMAGE_NAME}

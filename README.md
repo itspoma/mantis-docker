@@ -3,7 +3,7 @@
 To run on local:
 ```bash
 $ boot2docker up
-$ make
+$ make PORT=1234
 ```
 
 To run on stage:
@@ -12,7 +12,8 @@ $ curl -sSL https://get.docker.com/ | sh
 $ docker -v
 $ sudo service docker restart
 $ git clone https://github.com/itspoma/mantis-docker mantis-docker/
-$ cd mantis-docker/ && make
+$ cd mantis-docker/ && make PORT=1234
+$ open http://site:1234/
 ```
 
 MySQL credentials:
