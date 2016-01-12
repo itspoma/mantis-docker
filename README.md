@@ -1,4 +1,4 @@
-# Mantis Bug Tracker / environment
+# Mantis Bug Tracker
 **version 0.1**
 
 ![](http://new.tinygrab.com/7020c0e8b0fd99ace270dd880e44ab8619a53dacaf.png)
@@ -25,14 +25,14 @@
 
 ## Access
 
-> ### MySQL credentials:
-> ```
-> login: root
-> password: toortoor
-> ```
-> 
 > ### MantisBT credentials:
 > ```
 > login: administrator
 > password: (as you set on setup stage)
+> ```
+> 
+> ### MySQL credentials:
+> ```
+> login: root
+> password: toortoor
 > ```
