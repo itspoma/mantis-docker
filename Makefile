@@ -8,17 +8,20 @@ PORT = 8080
 
 all: clean build run
 
-clean:
+clean: remove-image remove-container
+
+remove-image:
 	docker rmi -f ${IMAGE_NAME} 2>/dev/null || true
 	docker images | grep ${IMAGE_NAME} || true
-	docker rm -f $$(docker ps -a -q) || true
+
+remove-container:
+	docker rm -f ${CONTAINER_NAME} 2>/dev/null || true
 	docker ps -a
 
-build:
+build: stop remove-container
 	docker build -t ${IMAGE_NAME} .
 
-stop:
-	docker rm -f ${CONTAINER_NAME} 2>/dev/null || true
+stop: remove-container
 
 run: stop
 	docker run --name=${CONTAINER_NAME} \
