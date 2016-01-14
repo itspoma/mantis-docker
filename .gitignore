@@ -1,5 +1,7 @@
 !.keep
 
 environment/mysql/data
+environment/mantis/config_inc_smtp.php
+
 logs/*.log
 site/*

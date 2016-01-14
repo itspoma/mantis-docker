@@ -22,13 +22,18 @@
 > $ cd mantis-docker/ && make PORT=1234
 > $ open http://site:1234/
 > ```
+> 
+> ### to proceed setup from scratch:
+> ```bash
+> $ open http://{site}/admin/install.php
+> ```
 
 ## Access
 
 > ### MantisBT credentials:
 > ```
 > login: administrator
-> password: (as you set on setup stage)
+> password: root
 > ```
 > 
 > ### MySQL credentials:

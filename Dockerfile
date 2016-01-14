@@ -42,6 +42,7 @@ ADD ./logs /shared/logs
 
 RUN true \
  && rm -rf /shared/environment/mysql/data \
+ && mysql_install_db \
  && service mysqld restart \
  && mysqladmin -u ${MYSQL_USER} password "${MYSQL_PASSWORD}" \
  && mysql -u ${MYSQL_USER} -p${MYSQL_PASSWORD} -e "SHOW DATABASES;"
@@ -58,6 +59,9 @@ RUN mkdir -p ${MANTIS_DIR} \
  && tar -xz --strip-components=1 -f ${MANTIS_FILE} \
  && rm -rf ${MANTIS_FILE} \
  && chmod 0777 -R /var/www/mantis
+
+#
+ADD ./environment/mantis/*.php /var/www/mantis/
 
 WORKDIR /shared
 

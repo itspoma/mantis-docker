@@ -1,0 +1,4 @@
+<?php
+$g_smtp_host = '';
+$g_smtp_username = '';
+$g_smtp_password = '';
