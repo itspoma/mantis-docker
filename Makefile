@@ -6,7 +6,10 @@ PORT = 8080
 
 .PHONY: all
 
-all: clean build run
+all: up clean build run
+
+up:
+	git pull --force
 
 clean: remove-image remove-container
 
