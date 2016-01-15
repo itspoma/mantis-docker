@@ -58,7 +58,8 @@ RUN mkdir -p ${MANTIS_DIR} \
  && curl -fSL ${MANTIS_URL} -o ${MANTIS_FILE} \
  && tar -xz --strip-components=1 -f ${MANTIS_FILE} \
  && rm -rf ${MANTIS_FILE} \
- && chmod 0777 -R /var/www/mantis
+ && chmod 0777 -R /var/www/mantis \
+ && touch /shared/logs/mantisbt.log && chmod 0777 /shared/logs/mantisbt.log
 
 #
 ADD ./environment/mantis/*.php /var/www/mantis/

@@ -12,7 +12,7 @@ require_once 'config_inc_smtp.php';
 
 $g_phpMailer_method = PHPMAILER_METHOD_SMTP;
 $g_smtp_connection_mode = 'tls';
-$g_smtp_port = 25;
+$g_smtp_port = 587;
 
 $g_log_level = LOG_EMAIL | LOG_EMAIL_RECIPIENT | LOG_FILTERING | LOG_AJAX;
 $g_log_destination = 'file:/shared/logs/mantisbt.log';
